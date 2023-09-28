@@ -16,7 +16,7 @@ namespace Matrices2
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Selecciona una opción:");
                 Console.WriteLine("1. Calcular ceros en una matriz 5x5.");
-                Console.WriteLine("2. Llenar matriz cuadrada diagonal 1 y 0.");
+                Console.WriteLine("2. Resolver matriz mediante Gauss-Jordan.");
                 Console.WriteLine("3. Salir.");
                 Console.Write("> ");
 
@@ -64,7 +64,7 @@ namespace Matrices2
                             }
                             break;
 
-                        case 2:
+                       //* case 3:
                             Console.Clear();
                             Console.Write("Tamaño matriz cuadrada: ");
                             if (int.TryParse(Console.ReadLine(), out int n) && n > 0)
@@ -79,6 +79,41 @@ namespace Matrices2
                             {
                                 Console.WriteLine("Tamaño de matriz con caracteres inválidos. Presiona cualquier tecla para regresar.");
                                 Console.ReadKey();
+                            }
+                            break;
+                        //*
+
+                        case 2:
+                            Console.Clear();
+                            Console.Write("Dimensión de la matriz cuadrada: ");
+                            if (int.TryParse(Console.ReadLine(), out int dimension) && dimension > 0)
+                            {
+                                matriz = new MatrizGaussJordan(dimension);
+                                matriz.PedirValores();
+                                ((MatrizGaussJordan)matriz).ResolverGaussJordan();
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.WriteLine("Matriz resuelta:");
+                                matriz.MostrarMatriz();
+                                Console.WriteLine("Presiona 'S' para regresar...");
+                                while (true)
+                                {
+                                    if (Console.ReadKey().Key == ConsoleKey.S)
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Dimensión de matriz inválida. Presiona S para regresar.");
+                                Console.WriteLine("Presiona 'S' para regresar...");
+                                while (true)
+                                {
+                                    if (Console.ReadKey().Key == ConsoleKey.S)
+                                    {
+                                        break;
+                                    }
+                                }
                             }
                             break;
 
@@ -101,6 +136,3 @@ namespace Matrices2
         }
     }
 }
-
-
-

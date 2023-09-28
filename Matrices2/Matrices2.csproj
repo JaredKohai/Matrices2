@@ -46,6 +46,7 @@
     <Compile Include="Matriz.cs" />
     <Compile Include="MatrizCuadrada.cs" />
     <Compile Include="MatrizExample.cs" />
+    <Compile Include="MatrizGaussJordan.cs" />
     <Compile Include="MatrizPersonalizada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
