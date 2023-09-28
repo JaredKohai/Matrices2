@@ -98,7 +98,6 @@ namespace Matrices2
                         }
                     }
                 }
-//pasos
                 Console.WriteLine($"Paso {k + 1}:");
                 MostrarMatriz();
                 Console.WriteLine();
